@@ -105,3 +105,4 @@ dist
 
 #Configuracion VScode
 .vscode
+*.webp
