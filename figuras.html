@@ -8,11 +8,30 @@
     <style>
       * {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
       }
-      .calc-cuadrado {
+      header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      body {
+        background-color: rgb(252, 240, 226);
+      }
+      .cards-calculos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .card-calc {
         background-color: rgb(31, 30, 30);
-        min-height: 300px;
-        max-width: 400px;
+        height: 400px;
+        width: 400px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -22,13 +41,15 @@
         box-sizing: border-box;
         padding: 20px;
         color: white;
+        margin: 10px;
       }
-      .calc-cuadrado form {
+      .card-calc form {
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
-      .calc-cuadrado input {
+      .card-calc input {
         width: 80%;
         height: 35px;
         border: none;
@@ -37,13 +58,21 @@
         text-align: center;
         font-size: 18px;
       }
-      .calc-cuadrado input:focus,
+      .card-calc input::placeholder{
+        font-size: 15px;
+        text-align: center;
+        color: rgb(158, 158, 158);
+      }
+      .card-calc.triangulo input {
+        width: 40%;
+        margin: 10px 0;
+      }
+      .card-calc input:focus,
       input:scope,
       input:active {
         border: none;
       }
-      .calc-cuadrado button {
-        background-color: rgb(30, 84, 146);
+      .card-calc button {
         color: white;
         width: 80%;
         height: 40px;
@@ -52,6 +81,27 @@
         border: none;
         border-radius: 5px;
       }
+      button:hover {
+        cursor: pointer;
+      }
+      .card-calc.cuadrado button {
+        background-color: rgb(25, 43, 145);
+      }
+      .card-calc.cuadrado button:hover {
+        background-color: rgb(30, 50, 168);
+      }
+      .card-calc.triangulo button {
+        background-color: rgb(148, 8, 118);
+      }
+      .card-calc.triangulo button:hover {
+        background-color: rgb(172, 9, 136);
+      }
+      .card-calc.circulo button {
+        background-color: rgb(8, 148, 101);
+      }
+      .card-calc.circulo button:hover {
+        background-color: rgb(7, 177, 120);
+      }
     </style>
   </head>
   <body>
@@ -59,21 +109,55 @@
       <h1>Figuras geométricas</h1>
       <p>Este es el primer taller del curso práctico de JavaScript</p>
     </header>
-    <section class="calc-cuadrado">
-      <h2>Calcula el área y perimetro de un cuadrado</h2>
-      <form action="">
-        <label for="InputCuadrado"
-          >Escribe cuánto mide cada lado de tu cuadrado:</label
-        >
-        <input id="InputCuadrado" type="number" />
-        <button type="button" onclick="calcularPerimetroCuadrado()">
-          Calcular el perímetro
-        </button>
-        <button type="button" onclick="calcularAreaCuadrado()">
-          Calcular el área
-        </button>
-      </form>
+    <section class="cards-calculos">
+      <div class="card-calc cuadrado">
+        <h2>Calcula un cuadrado</h2>
+        <form action="">
+          <label for="InputCuadrado"
+            >Escribe un lado de tu cuadrado:</label
+          >
+          <input id="InputCuadrado" type="number" placeholder="Ingresa un lado"/>
+          <button type="button" onclick="calcularPerimetroCuadrado()">
+            Calcular el perímetro
+          </button>
+          <button type="button" onclick="calcularAreaCuadrado()">
+            Calcular el área
+          </button>
+        </form>
+      </div>
+      <div class="card-calc triangulo">
+        <h2>Calcula un triángulo isosceles</h2>
+        <form action="">
+          <label for="InputTriangulo"
+            >Escribe un lado de tu triángulo y luego la base</label
+          >
+          <div>
+            <input id="InputTriangulo" type="number" placeholder="Ingresa el lado"/>
+            <input id="BaseTriangulo" type="number" placeholder="Ingresa la base"/>
+          </div>
+          <button type="button" onclick="calcularPerimetroTriangulo()">
+            Calcular el perímetro
+          </button>
+          <button type="button" onclick="calcularAreaTriangulo()">
+            Calcular el área
+          </button>
+        </form>
+      </div>
+      <div class="card-calc circulo">
+        <h2>Calcula un círculo</h2>
+        <form action="">
+          <label for="InputCirculo">Escribe el radio de tu círculo:</label>
+          <input id="InputCirculo" type="number" placeholder="Ingresa el radio"/>
+          <button type="button" onclick="calcularPerimetroCirculo()">
+            Calcular la circunferencia
+          </button>
+          <button type="button" onclick="calcularAreaCirculo()">
+            Calcular el área
+          </button>
+        </form>
+      </div>
     </section>
+
     <script src="./figuras.js"></script>
   </body>
 </html>
