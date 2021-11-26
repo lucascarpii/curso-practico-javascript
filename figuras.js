@@ -19,7 +19,7 @@ function areaTriangulo(base, altura) {
 }
 console.groupEnd("Triángulos");
 
-// //Código circulo
+//Código circulo
 console.group("Círculos");
 const PI = Math.PI;
 //Circunferencia
