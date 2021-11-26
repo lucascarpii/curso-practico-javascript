@@ -1,0 +1,107 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  margin-bottom: 20px;
+}
+header p {
+  font-size: 18px;
+  color: rgb(166, 172, 255);
+}
+body {
+  background-color: rgb(252, 240, 226);
+}
+.cards-calculos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card-calc {
+  background-color: rgb(26, 26, 26);
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+  color: white;
+  margin: 10px;
+}
+.card-calc form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-calc input {
+  width: 80%;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+.card-calc input::placeholder {
+  font-size: 15px;
+  text-align: center;
+  color: rgb(158, 158, 158);
+}
+.cont-tri {
+  margin: 10px 0;
+}
+.card-calc.triangulo input {
+  width: 40%;
+  margin: 2px 0;
+}
+.card-calc.triangulo input:nth-child(3) {
+  width: 82%;
+}
+
+.card-calc input:focus,
+input:scope,
+input:active {
+  border: none;
+}
+.card-calc button {
+  color: white;
+  width: 80%;
+  height: 40px;
+  font-size: 15px;
+  margin: 4px;
+  border: none;
+  border-radius: 5px;
+}
+button:hover {
+  cursor: pointer;
+}
+.card-calc.cuadrado button {
+  background-color: rgb(25, 43, 145);
+}
+.card-calc.cuadrado button:hover {
+  background-color: rgb(30, 50, 168);
+}
+.card-calc.triangulo button {
+  background-color: rgb(148, 8, 118);
+}
+.card-calc.triangulo button:hover {
+  background-color: rgb(172, 9, 136);
+}
+.card-calc.circulo button {
+  background-color: rgb(8, 148, 101);
+}
+.card-calc.circulo button:hover {
+  background-color: rgb(7, 177, 120);
+}
