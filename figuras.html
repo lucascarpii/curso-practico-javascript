@@ -20,6 +20,10 @@
         text-align: center;
         margin-bottom: 20px;
       }
+      header p{
+        font-size: 18px;
+        color: rgb(166, 172, 255);
+      }
       body {
         background-color: rgb(252, 240, 226);
       }
@@ -29,7 +33,7 @@
         flex-wrap: wrap;
       }
       .card-calc {
-        background-color: rgb(31, 30, 30);
+        background-color: rgb(26, 26, 26);
         height: 400px;
         width: 400px;
         display: flex;
@@ -58,15 +62,22 @@
         text-align: center;
         font-size: 18px;
       }
-      .card-calc input::placeholder{
+      .card-calc input::placeholder {
         font-size: 15px;
         text-align: center;
         color: rgb(158, 158, 158);
       }
-      .card-calc.triangulo input {
-        width: 40%;
+      .cont-tri {
         margin: 10px 0;
       }
+      .card-calc.triangulo input {
+        width: 40%;
+        margin: 2px 0;
+      }
+      .card-calc.triangulo input:nth-child(3) {
+        width: 82%;
+      }
+
       .card-calc input:focus,
       input:scope,
       input:active {
@@ -111,12 +122,16 @@
     </header>
     <section class="cards-calculos">
       <div class="card-calc cuadrado">
-        <h2>Calcula un cuadrado</h2>
+        <div>
+          <h2>Calcula un cuadrado</h2>
+          <label for="InputCuadrado">Escribe un lado de tu cuadrado:</label>
+        </div>
         <form action="">
-          <label for="InputCuadrado"
-            >Escribe un lado de tu cuadrado:</label
-          >
-          <input id="InputCuadrado" type="number" placeholder="Ingresa un lado"/>
+          <input
+            id="InputCuadrado"
+            type="number"
+            placeholder="Ingresa un lado"
+          />
           <button type="button" onclick="calcularPerimetroCuadrado()">
             Calcular el perímetro
           </button>
@@ -126,14 +141,32 @@
         </form>
       </div>
       <div class="card-calc triangulo">
-        <h2>Calcula un triángulo isosceles</h2>
-        <form action="">
-          <label for="InputTriangulo"
-            >Escribe un lado de tu triángulo y luego la base</label
+        <div>
+          <h2>
+            Calcula un triángulo
+            <span style="color: rgb(172, 9, 136)">isosceles</span>
+          </h2>
+          <label for="Lado1Triangulo"
+            >Escribe los lados de tu triángulo y luego la base</label
           >
-          <div>
-            <input id="InputTriangulo" type="number" placeholder="Ingresa el lado"/>
-            <input id="BaseTriangulo" type="number" placeholder="Ingresa la base"/>
+        </div>
+        <form action="">
+          <div class="cont-tri">
+            <input
+              id="Lado1Triangulo"
+              type="number"
+              placeholder="Ingresa el lado"
+            />
+            <input
+              id="Lado2Triangulo"
+              type="number"
+              placeholder="Ingresa el lado"
+            />
+            <input
+              id="BaseTriangulo"
+              type="number"
+              placeholder="Ingresa la base"
+            />
           </div>
           <button type="button" onclick="calcularPerimetroTriangulo()">
             Calcular el perímetro
@@ -144,10 +177,16 @@
         </form>
       </div>
       <div class="card-calc circulo">
-        <h2>Calcula un círculo</h2>
-        <form action="">
+        <div>
+          <h2>Calcula un círculo</h2>
           <label for="InputCirculo">Escribe el radio de tu círculo:</label>
-          <input id="InputCirculo" type="number" placeholder="Ingresa el radio"/>
+        </div>
+        <form action="">
+          <input
+            id="InputCirculo"
+            type="number"
+            placeholder="Ingresa el radio"
+          />
           <button type="button" onclick="calcularPerimetroCirculo()">
             Calcular la circunferencia
           </button>

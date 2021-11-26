@@ -34,6 +34,7 @@ function areaCirculo(radio) {
 console.groupEnd("Círculos");
 
 //Aqui interactuamos con el HTML
+//Cuadrado
 function calcularPerimetroCuadrado() {
   const input = document.getElementById("InputCuadrado");
   const value = input.value;
@@ -48,13 +49,48 @@ function calcularAreaCuadrado() {
   const area = areaCuadrado(value);
   alert(area);
 }
-
+//Triángulo
 function alturaTrianguloIsosceles(lado, lado2, base) {
   if (lado != lado2) {
     console.error("Los lados del triángulo no son iguales");
+    alert("Hey! los lados del triángulo no son iguales");
   } else {
-      cat1 = (base / 2) * (base / 2);
-      hip = lado * lado;
-      altura = Math.sqrt(hip - cat1);
+    cat1 = (base / 2) * (base / 2);
+    hip = lado * lado;
+    altura = Math.sqrt(hip - cat1);
+    return altura;
   }
+}
+
+function calcularPerimetroTriangulo() {
+  const lado1 = Number(document.getElementById("Lado1Triangulo").value);
+  const lado2 = Number(document.getElementById("Lado2Triangulo").value);
+  const base = Number(document.getElementById("BaseTriangulo").value);
+
+  const perimetro = perimetroTriangulo(lado1, lado2, base);
+  alert(perimetro);
+}
+
+function calcularAreaTriangulo() {
+  const lado1 = Number(document.getElementById("Lado1Triangulo").value);
+  const lado2 = Number(document.getElementById("Lado2Triangulo").value);
+  const base = Number(document.getElementById("BaseTriangulo").value);
+  const altura = alturaTrianguloIsosceles(lado1, lado2, base);
+
+  const area = areaTriangulo(base, altura);
+  alert(area);
+}
+
+//Círculo
+function calcularPerimetroCirculo() {
+  const radio = Number(document.getElementById("InputCirculo").value);
+  console.log(radio)
+  const circ = perimetroCirculo(radio);
+  alert(circ);
+}
+
+function calcularAreaCirculo() {
+  const radio = Number(document.getElementById("InputCirculo").value);
+  const area = areaCirculo(radio);
+  alert(area);
 }
