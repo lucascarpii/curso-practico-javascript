@@ -5,13 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Figuras geométricas | Curso Práctico de JavaScript en Platzi</title>
+    <style>
+      * {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .calc-cuadrado {
+        background-color: rgb(31, 30, 30);
+        min-height: 300px;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 20px;
+        color: white;
+      }
+      .calc-cuadrado form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .calc-cuadrado input {
+        width: 80%;
+        height: 35px;
+        border: none;
+        border-radius: 5px;
+        margin: 10px;
+        text-align: center;
+        font-size: 18px;
+      }
+      .calc-cuadrado input:focus,
+      input:scope,
+      input:active {
+        border: none;
+      }
+      .calc-cuadrado button {
+        background-color: rgb(30, 84, 146);
+        color: white;
+        width: 80%;
+        height: 40px;
+        font-size: 15px;
+        margin: 4px;
+        border: none;
+        border-radius: 5px;
+      }
+    </style>
   </head>
   <body>
     <header>
       <h1>Figuras geométricas</h1>
       <p>Este es el primer taller del curso práctico de JavaScript</p>
     </header>
-    <section>
+    <section class="calc-cuadrado">
       <h2>Calcula el área y perimetro de un cuadrado</h2>
       <form action="">
         <label for="InputCuadrado"

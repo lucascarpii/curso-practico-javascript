@@ -48,3 +48,13 @@ function calcularAreaCuadrado() {
   const area = areaCuadrado(value);
   alert(area);
 }
+
+function alturaTrianguloIsosceles(lado, lado2, base) {
+  if (lado != lado2) {
+    console.error("Los lados del triángulo no son iguales");
+  } else {
+      cat1 = (base / 2) * (base / 2);
+      hip = lado * lado;
+      altura = Math.sqrt(hip - cat1);
+  }
+}
