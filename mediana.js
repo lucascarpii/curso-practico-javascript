@@ -14,18 +14,26 @@ function esPar(num) {
     return false;
   }
 }
-function calcularMediana(lista) {
+
+function calcularMediana(uLista) {
+  const lista = uLista.sort(function (a, b) {
+    return a - b;
+  });
   const mitadLista = parseInt(lista.length / 2);
   let mediana;
 
-  if (esPar(lista.length)) {
-    const el1 = lista[mitadLista];
-    const el2 = lista[mitadLista - 1];
-    const promedioElementos = calcularMediaAritmetica([el1, el2]);
-
-    mediana = promedioElementos;
+  if (lista.length == 0) {
+    console.log("Tu lista esta vacia");
   } else {
-    mediana = lista[mitadLista];
+    if (esPar(lista.length)) {
+      const el1 = lista[mitadLista];
+      const el2 = lista[mitadLista - 1];
+      const promedioElementos = calcularMediaAritmetica([el1, el2]);
+
+      mediana = promedioElementos;
+    } else {
+      mediana = lista[mitadLista];
+    }
   }
 
   console.log(mediana);
